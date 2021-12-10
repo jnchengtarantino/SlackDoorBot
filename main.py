@@ -4,6 +4,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(13, GPIO.OUT)
 pwm = GPIO.PWM(13, 50)
 pwm.start(0)
 
