@@ -3,7 +3,7 @@ from slack import RTMClient
 import RPi.GPIO as GPIO
 from time import sleep
 
-GPIO.setMode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 pwm = GPIO.PWM(13, 50)
 pwm.start(0)
 
