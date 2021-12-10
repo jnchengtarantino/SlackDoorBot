@@ -3,6 +3,7 @@ from slack import RTMClient
 import RPi.GPIO as GPIO
 from time import sleep
 
+GPIO.setMode(GPIO.BCM)
 pwm = GPIO.PWM(13, 50)
 pwm.start(0)
 
@@ -13,8 +14,6 @@ def onMessage(**payload):
   sleep(1)
   pwm.ChangeDutyCycle(0)
   
-
-GPIO.setMode(GPIO.BCM)
 slack_token = os.environ["SLACK_BOT_TOKEN"]
 rtm_client = RTMClient(token=slack_token)
 rtm_client.start()
